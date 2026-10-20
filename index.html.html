@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ECHO StartUp Market 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF4F3; --surface:#FFFFFF; --ink:#0F1923; --ink-2:#4A5966; --line:#D3DEDC;
+  --mint:#00B894; --mint-ink:#006B56; --gold:#FFD166; --gold-ink:#5C4300; --coral:#FF6B6B;
+  --chip:#F2F6F5; --focus:#0F1923;
+  --display:"Black Han Sans","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1923; --surface:#16232F; --ink:#EAF2F1; --ink-2:#9FB0BC; --line:#25384A;
+    --mint:#00D4AA; --mint-ink:#00D4AA; --gold:#FFD166; --gold-ink:#0F1923; --chip:#1D2E3C; --focus:#00D4AA;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1923; --surface:#16232F; --ink:#EAF2F1; --ink-2:#9FB0BC; --line:#25384A;
+  --mint:#00D4AA; --mint-ink:#00D4AA; --gold:#FFD166; --gold-ink:#0F1923; --chip:#1D2E3C; --focus:#00D4AA;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.brand{font-family:var(--display);font-size:20px;letter-spacing:.01em;text-decoration:none}
+.lang{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden}
+.lang button{font:600 14px var(--body);background:transparent;color:var(--ink);border:0;padding:6px 14px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+/* hero */
+.awning{height:34px;background:repeating-linear-gradient(90deg,#00D4AA 0 60px,#FFD166 60px 120px,#FF6B6B 120px 180px,#9B8CFF 180px 240px,#4DA8FF 240px 300px)}
+.awning-fringe{height:14px;background:
+  radial-gradient(circle 30px at 30px 0,#00D4AA 29px,transparent 30px) 0 0/300px 14px repeat-x,
+  radial-gradient(circle 30px at 90px 0,#FFD166 29px,transparent 30px) 0 0/300px 14px repeat-x,
+  radial-gradient(circle 30px at 150px 0,#FF6B6B 29px,transparent 30px) 0 0/300px 14px repeat-x,
+  radial-gradient(circle 30px at 210px 0,#9B8CFF 29px,transparent 30px) 0 0/300px 14px repeat-x,
+  radial-gradient(circle 30px at 270px 0,#4DA8FF 29px,transparent 30px) 0 0/300px 14px repeat-x}
+.hero{padding:56px 0 40px}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(44px,8vw,96px);line-height:1;margin:0 0 20px;letter-spacing:-.01em}
+.hero h1 span{display:block}
+.hero p.lead{font-size:clamp(17px,2vw,20px);max-width:62ch;color:var(--ink-2);margin:0 0 8px}
+.hero p.by{font-size:14px;color:var(--ink-2);margin:0}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:40px 0 0;padding:0;list-style:none;border-top:2px solid var(--ink)}
+.steps li{padding:16px 16px 4px 0;counter-increment:s}
+.steps li::before{content:counter(s);font-family:var(--display);font-size:32px;line-height:1;display:block;margin-bottom:8px;color:var(--mint-ink)}
+.steps b{display:block;font-size:16px}
+.steps span{font-size:14px;color:var(--ink-2)}
+@media (max-width:760px){.steps{grid-template-columns:1fr 1fr}}
+
+/* filter */
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:48px 0 20px}
+.bar h2{font-family:var(--display);font-weight:400;font-size:30px;margin:0 auto 0 0}
+.filter button{font:500 15px var(--body);border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 16px;cursor:pointer}
+.filter button[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--bg)}
+
+/* stalls */
+.stalls{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;padding-bottom:24px}
+@media (max-width:420px){.stalls{grid-template-columns:1fr}}
+.stall{background:var(--surface);border:1px solid var(--line);border-radius:4px 4px 14px 14px;display:flex;flex-direction:column;position:relative}
+.stall .roof{height:22px;border-radius:4px 4px 0 0;
+  background:repeating-linear-gradient(90deg,var(--c) 0 28px,var(--c2) 28px 56px)}
+.stall .fringe{height:12px;margin-bottom:6px;
+  background:radial-gradient(circle 14px at 14px 0,var(--c) 13px,transparent 14px) 0 0/56px 12px repeat-x,
+             radial-gradient(circle 14px at 42px 0,var(--c2) 13px,transparent 14px) 0 0/56px 12px repeat-x}
+.stall .in{padding:10px 22px 22px;display:flex;flex-direction:column;gap:14px;flex:1}
+.team{font-size:14px;color:var(--ink-2);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.code{font-variant-numeric:tabular-nums}
+.stall h3{font-family:var(--display);font-weight:400;font-size:34px;line-height:1.05;margin:2px 0 4px}
+.tag{font-weight:500;margin:0}
+.intro{color:var(--ink-2);font-size:15px;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.intro.open{-webkit-line-clamp:unset;display:block}
+.more{align-self:flex-start;background:none;border:0;padding:0;font:500 14px var(--body);color:var(--mint-ink);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.pdp{display:block;text-align:center;text-decoration:none;font-weight:700;background:var(--ink);color:var(--bg);padding:12px 16px;border-radius:10px}
+.group h4{font-size:13px;font-weight:700;margin:0 0 8px;color:var(--ink-2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:14px;text-decoration:none;padding:6px 12px;border-radius:8px;background:var(--chip);border:1px solid var(--line);white-space:nowrap}
+.chip.buy{background:var(--gold);color:#3D2C00;border-color:transparent;font-weight:700}
+.chip.off{opacity:.55;cursor:not-allowed}
+.foot{display:flex;gap:8px;margin-top:auto;padding-top:4px}
+.survey{flex:1;text-align:center;text-decoration:none;font-weight:700;border:2px solid var(--mint);color:var(--mint-ink);padding:10px 12px;border-radius:10px}
+.share{font:600 14px var(--body);background:transparent;color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.empty{font-size:14px;color:var(--ink-2);margin:0}
+
+/* rules + footer */
+.rules{margin:48px 0 0;padding:28px 0;border-top:2px solid var(--ink);display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media (max-width:760px){.rules{grid-template-columns:1fr}}
+.rules h2{font-family:var(--display);font-weight:400;font-size:26px;margin:0 0 10px}
+.rules p,.rules li{color:var(--ink-2);font-size:15px}
+.rules ul{padding-left:18px;margin:0}
+footer{padding:28px 0 40px;font-size:14px;color:var(--ink-2);border-top:1px solid var(--line)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#">ECHO Market</a>
+  <div class="lang" role="group" aria-label="Language">
+    <button type="button" data-l="ko">한국어</button><button type="button" data-l="en">English</button>
+  </div>
+</div></header>
+
+<div class="awning" aria-hidden="true"></div><div class="awning-fringe" aria-hidden="true"></div>
+
+<main class="wrap">
+  <section class="hero">
+    <h1><span>ECHO StartUp</span><span>Market 2026</span></h1>
+    <p class="lead" data-t="lead"></p>
+    <p class="by" data-t="by"></p>
+    <ol class="steps">
+      <li><b data-t="s1"></b><span data-t="s1d"></span></li>
+      <li><b data-t="s2"></b><span data-t="s2d"></span></li>
+      <li><b data-t="s3"></b><span data-t="s3d"></span></li>
+      <li><b data-t="s4"></b><span data-t="s4d"></span></li>
+    </ol>
+  </section>
+
+  <div class="bar">
+    <h2 data-t="stallsTitle"></h2>
+    <div class="filter" role="group" aria-label="Filter">
+      <button type="button" data-f="all"></button>
+      <button type="button" data-f="suwon"></button>
+      <button type="button" data-f="paju"></button>
+      <button type="button" data-f="hwaseong"></button>
+    </div>
+  </div>
+  <div class="stalls" id="stalls"></div>
+
+  <section class="rules">
+    <div>
+      <h2 data-t="rTitle"></h2>
+      <ul>
+        <li data-t="r1"></li>
+        <li data-t="r2"></li>
+        <li data-t="r3"></li>
+      </ul>
+    </div>
+    <div>
+      <h2 data-t="pTitle"></h2>
+      <p data-t="p1"></p>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap" data-t="footer"></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const BUY = id => `https://kr.penworldwide.org/buybuttons/${id}/`;
+const T = {
+  ko:{
+    lead:"수원·파주·화성오산 ECHO StartUp 모의창업 팀들이 직접 기획하고 만든 제품을 한곳에 모았습니다. 둘러보고, 영상을 공유하고, 설문에 답하고, 구매해 주세요. 여러분의 한 번의 클릭이 팀의 실제 마케팅 성과(traction)가 됩니다.",
+    by:"주최 주식회사 플래닛에코 · KoreaPEN(펜월드와이드협회 한국본부)",
+    s1:"둘러보기",s1d:"제품 상세 페이지에서 무엇을 만드는지 확인해요.",
+    s2:"영상 공유하기",s2d:"쇼츠를 보고 좋아요, 댓글, 공유로 응원해요.",
+    s3:"설문 참여하기",s3d:"2분 설문이 팀의 시장 검증 데이터가 돼요.",
+    s4:"구매하기",s4d:"마음에 드는 제품을 구독하거나 구매해요.",
+    stallsTitle:"참여 팀", all:"전체", suwon:"수원", paju:"파주", hwaseong:"화성오산",
+    city:{suwon:"수원",paju:"파주",hwaseong:"화성오산"}, noTeams:"이 지역 팀은 곧 공개됩니다.",
+    pdp:"제품 상세 보기", buy:"구매하기", media:"홍보 콘텐츠", survey:"설문 참여하기", share:"링크 복사",
+    more:"더보기", less:"접기", soon:"준비 중", noBuy:"구매 버튼 준비 중입니다.", noSurvey:"설문 준비 중",
+    copied:"이 팀의 링크를 복사했어요.", copyFail:"주소창의 링크를 직접 복사해 주세요.",
+    rTitle:"ECHO 팀 참여 규칙",
+    r1:"자기 팀 제품은 구매할 수 없습니다. 다른 팀 제품을 둘러보고 구매해 주세요.",
+    r2:"구매 전 제품 상세 페이지와 영상을 먼저 확인하고, 설문으로 의견을 남겨 주세요.",
+    r3:"좋았던 제품은 가족, 친구, 해외 친구에게 이 페이지 링크로 공유해 주세요.",
+    pTitle:"구매 버튼 안내",
+    p1:"구매 버튼은 PEN Worldwide 실습기업(PE) 거래 시스템으로 연결됩니다. 전 세계 PEN 네트워크의 학생 기업들이 같은 방식으로 서로 거래하며, 교육 목적의 모의 거래입니다.",
+    footer:"ECHO StartUp Market 2026 · 주식회사 플래닛에코 · PEN Worldwide Korea Headquarters (KoreaPEN)"
+  },
+  en:{
+    lead:"Products planned and built by ECHO StartUp mock-startup teams from Suwon, Paju and Hwaseong-Osan, Korea, all in one place. Browse, share their videos, answer a survey, and buy. Every click becomes real marketing traction for these student teams.",
+    by:"Organized by PlanetEcho Co., Ltd. and PEN Worldwide Korea Headquarters (KoreaPEN)",
+    s1:"Browse",s1d:"Open each product page to see what the team built.",
+    s2:"Share a video",s2d:"Watch the shorts, then like, comment and share.",
+    s3:"Take a survey",s3d:"A two-minute survey becomes the team’s market data.",
+    s4:"Buy",s4d:"Subscribe to or buy the products you like.",
+    stallsTitle:"Teams", all:"All", suwon:"Suwon", paju:"Paju", hwaseong:"Hwaseong-Osan",
+    city:{suwon:"Suwon",paju:"Paju",hwaseong:"Hwaseong-Osan"}, noTeams:"Teams from this region are coming soon.",
+    pdp:"View product page", buy:"Buy", media:"Promo content", survey:"Take the survey", share:"Copy link",
+    more:"Read more", less:"Show less", soon:"Coming soon", noBuy:"Buy buttons are coming soon.", noSurvey:"Survey coming soon",
+    copied:"Link to this team copied.", copyFail:"Copy the link from your address bar.",
+    rTitle:"Rules for ECHO teams",
+    r1:"You can’t buy your own team’s products. Browse and buy from other teams.",
+    r2:"Check the product page and videos before buying, and leave feedback in the survey.",
+    r3:"Share this page with family, friends and friends abroad when you find a product you like.",
+    pTitle:"About the buy buttons",
+    p1:"Buy buttons connect to the PEN Worldwide practice enterprise (PE) trading system, where student companies in the global PEN network trade with each other. All transactions are simulated for education.",
+    footer:"ECHO StartUp Market 2026 · PlanetEcho Co., Ltd. · PEN Worldwide Korea Headquarters (KoreaPEN)"
+  }
+};
+
+const TEAMS = [
+  {code:"KR01SUWON01", team:"Pathlog", product:"PathLOG", city:"suwon", c:"#00D4AA", c2:"#0FA98A",
+   tag:{ko:"학생 전용 디지털 포트폴리오 & 커리어 플랫폼",en:"A digital portfolio and career platform made for students"},
+   intro:{ko:"교내외 활동, 봉사, 수행평가를 매번 따로 정리하느라 힘들지 않으셨나요? 입시철만 되면 “내가 그때 무슨 활동을 했었지?” 기억도 잘 나지 않고 사진과 증빙 자료도 흩어져 있곤 하죠. PathLOG는 흩어진 수행평가, 동아리, 봉사활동 기록을 한곳에 모아 입시·생기부 제출용 서식으로 자동 정리해 주고, 또래 친구들과 활동을 공유하고 피드백을 주고받으며 나만의 적성과 진로를 찾아갈 수 있도록 돕습니다.",
+          en:"Tired of managing your extracurriculars, volunteer hours and assignments in different places? When submission season hits, it’s easy to forget what you did and even harder to find your photos and proof files. PathLOG gathers your scattered activities in one place, converts them into official application formats, and connects you with peers to share feedback and explore your career path."},
+   pdp:"https://pathlog-5lrrlcc.gamma.site/",
+   buy:[["월구독","Monthly","kr01suwon01/btn/5b598c8d-21b7-41be-9587-60c43b35cf90"],["연간구독","Annual","kr01suwon01/btn/f2e64c0e-ddc1-45ed-9216-c16b37be861d"],["광고 서비스","Advertising","kr01suwon01/btn/c2601214-49c2-43e7-875c-60bfd78b8107"]],
+   media:[["쇼츠 1","Shorts 1","https://youtube.com/shorts/hbxSvbWZB7U?feature=share"],["쇼츠 2","Shorts 2","https://youtube.com/shorts/xbbdC8rlmrM?feature=share"],["블로그","Blog","https://blog.naver.com/pathlog_1/224430154610"]],
+   survey:"https://docs.google.com/forms/d/e/1FAIpQLSdlFv_g8SyxAscObaJ3A0aCBUlaV-uNaQu1P5c__KkwgBPXwA/viewform"},
+  {code:"KR01SUWON05", team:"PentaCorp", product:"UNEXPOSED", city:"suwon", c:"#FF6B6B", c2:"#E04F55",
+   tag:{ko:"나만의 완벽한 핏을 찾아주는 2D/3D 신체 커스터마이징 앱",en:"A 2D/3D body customization app that finds your perfect fit"},
+   intro:{ko:"UNEXPOSED는 기성복 사이즈에 얽매이지 않고 나만의 핏을 찾아주는 앱입니다. 비대칭·비정형 신체 구조는 물론 상처나 흉터까지 정교하게 반영한 개인 3D 아바타를 만들고, 3번의 탭만으로 스타일을 디자인할 수 있습니다. 가상 공간에서 완성한 옷은 실제 재단과 제작이 가능한 의류 도면 파일로 실시간 변환되며, 프리미엄 서비스로 맞춤 의류를 집 앞까지 받아볼 수 있습니다. 숨겨진 상처를 예술로 바꾸는 나만의 룩을 경험해 보세요.",
+          en:"UNEXPOSED breaks free from standard sizing to find your perfect fit. It generates a personal 3D avatar that captures asymmetric body shapes, curves and scars. Design your style in just three taps and turn your virtual creation into real clothing patterns. With the premium service, your custom clothing is delivered to your door."},
+   pdp:"https://pentacorp.onrender.com",
+   buy:[["월구독","Monthly","kr01suwon05/btn/4d8c1209-9a30-4706-81a9-e03c1c9e7566"],["연간구독","Annual","kr01suwon05/btn/707018db-ff41-4fd2-afc1-2b3ae27f3c6a"]],
+   media:[["유튜브 쇼츠","YouTube Shorts","https://youtube.com/shorts/RnCkHBP3P_s?feature=share"],["인스타그램","Instagram","https://www.instagram.com/p/DeA2lN8MFNQ/"],["카드뉴스","Card news","https://canva.link/pentacorp"]],
+   survey:"https://form.naver.com/response/LSk2EItxtXM"},
+  {code:"KR01SUWON06", team:"Care Eats", product:"Care Eats", city:"suwon", c:"#FFD166", c2:"#F2B33D",
+   tag:{ko:"부모님을 위한 AI 맞춤 저염 식단 구독",en:"AI-planned low-sodium meal subscription for seniors"},
+   intro:{ko:"자식된 마음으로 늘 걱정되는 부모님의 식사와 건강, Care Eats가 멀리서도 든든하게 챙겨드립니다. 고혈압 등 맞춤 영양 관리가 필요한 어르신을 위해 AI 알고리즘과 전문 셰프가 협력해 영양과 맛을 잡은 저염 식단을 배송합니다. 앱 대시보드로 혈압과 식사 현황을 실시간 확인해 원격으로 관리하고, 어르신 맞춤 간편 주문으로 가족 모두에게 안심을 선물합니다.",
+          en:"Always worried about your aging parents’ meals and health? Care Eats looks after them, even from afar. AI algorithms and chefs work together to deliver tasty, low-sodium meals for seniors managing hypertension. The app dashboard lets families monitor blood pressure and meal intake in real time, and a simple ordering system brings peace of mind to everyone."},
+   pdp:"https://family-dmp-5brer1w.gamma.site/",
+   buy:[["월구독","Monthly","kr01suwon06/btn/780196d7-606f-4cea-bda8-53e6878f84a7"],["연간구독","Annual","kr01suwon06/btn/4075354e-b83f-4fdd-bfe9-c785d5013d1f"]],
+   media:[["쇼츠 (Emily)","Shorts (Emily)","https://youtube.com/shorts/6D82SeMQcJY?si=CUsGQKDjJCf1WZH9"],["쇼츠 (William)","Shorts (William)","https://www.youtube.com/shorts/VH2m0AfiqEM"],["쇼츠 (Sulhae)","Shorts (Sulhae)",null],["쇼츠 (Yonghun)","Shorts (Yonghun)","https://www.youtube.com/shorts/lefSQOMKKUA"]],
+   survey:"https://docs.google.com/forms/d/e/1FAIpQLSc9b9s7p5xfJKMnJQ_UY-bblZ6DBTVfSXvniQ6QP1qwOMZCOQ/viewform"},
+  {code:"KR01PAJU08", team:"PH Lab", product:"One Of", city:"paju", c:"#9B8CFF", c2:"#7C6AF0",
+   tag:{ko:"매일 기분 따라 향을 바꾸는 카트리지형 커스텀 샴푸",en:"Custom shampoo with swappable scent cartridges"},
+   intro:{ko:"매일 아침 똑같은 샴푸 향이 지루하지 않으셨나요? “월요일엔 상쾌한 시트러스, 금요일엔 차분한 우디 향으로 시작할 수는 없을까?”라는 질문에서 출발했습니다. One Of는 플로럴, 우디, 시트러스 등 내 취향의 향을 직접 고르는 커스텀 샴푸입니다. 교체형 카트리지로 매일 기분에 맞춰 향을 바꾸고, 온라인으로 편리하게 주문해 보세요.",
+          en:"Tired of the same shampoo scent every morning? It started with a simple question: why not begin Monday with fresh Citrus and unwind on Friday with calm Woody notes? One Of is a custom shampoo where you choose your scent, from Floral and Woody to Citrus and more. Switch scents with swappable cartridges and order online with ease."},
+   pdp:"https://one-of-shampoo-lwgriab.gamma.site/",
+   buy:[["스타터 세트","Starter set","kr01paju08/btn/1f4e8b83-cc9f-4a67-b15a-e9bbec6a7742"],["무향 샴푸","Unscented shampoo","kr01paju08/btn/82c9b141-27af-4885-a150-35a9b425feb5"],["시트러스 카트리지","Citrus cartridge","kr01paju08/btn/dcdab900-0f79-4f34-9c48-b24a2905e8b9"],["플로럴 카트리지","Floral cartridge","kr01paju08/btn/6d930ec2-d3f3-4b29-acbe-a72563a4f2e7"],["우디 카트리지","Woody cartridge","kr01paju08/btn/f32bf7ec-032e-409b-aed8-c8c00c2f258c"]],
+   media:[["인스타그램","Instagram","https://www.instagram.com/phlab_official"],["유튜브 채널","YouTube channel","https://youtube.com/@official_phlab"]],
+   survey:"https://docs.google.com/forms/d/e/1FAIpQLSdqi7mtMzOE_S9R4BXa6vo1rHljAXWXldycIsJQxL86zT4AUQ/viewform"},
+  {code:"KR01PAJU10", team:"PawPole", product:"PawPole", city:"paju", c:"#4DA8FF", c2:"#2F86E0",
+   tag:null, intro:null,
+   pdp:"https://copy-of--sml9sz8.gamma.site/",
+   buy:[],
+   media:[["유튜브 쇼츠","YouTube Shorts","https://youtube.com/shorts/tVvn1yqDqO4"],["인스타그램 릴스","Instagram Reels","https://www.instagram.com/reel/Dc5M-sCs3uo/?igsi=MXIwcXcza2pxbXltdg=="],["블로그","Blog","https://info39841.tistory.com/m/1"]],
+   survey:"https://docs.google.com/forms/d/e/1FAIpQLSfKIq68EmrcXRGGmWcJEuoGCwEL0RsdF3f5I0jO120cEqw_ug/viewform"}
+];
+
+let lang = "ko", filter = "all";
+try{
+  const q = new URLSearchParams(location.search).get("lang");
+  const saved = localStorage.getItem("echo-market-lang");
+  lang = q==="en"||q==="ko" ? q : (saved || ((navigator.language||"ko").startsWith("ko")?"ko":"en"));
+}catch(e){ lang = (navigator.language||"ko").startsWith("ko")?"ko":"en"; }
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const link = (url, label, cls) => url
+  ? `<a class="${cls}" href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}</a>`
+  : `<span class="${cls} off" aria-disabled="true">${esc(label)} (${T[lang].soon})</span>`;
+
+function render(){
+  const t = T[lang], li = lang==="ko"?0:1;
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-t]").forEach(el => el.textContent = t[el.dataset.t]);
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.l===lang));
+  document.querySelectorAll(".filter button").forEach(b => { b.textContent = t[b.dataset.f]; b.setAttribute("aria-pressed", b.dataset.f===filter); });
+
+  const list = TEAMS.filter(x => filter==="all" || x.city===filter);
+  if(!list.length){ document.getElementById("stalls").innerHTML = `<p class="empty">${t.noTeams}</p>`; return; }
+  document.getElementById("stalls").innerHTML = list.map(x => `
+  <article class="stall" id="${x.code}" style="--c:${x.c};--c2:${x.c2}">
+    <div class="roof"></div><div class="fringe"></div>
+    <div class="in">
+      <div>
+        <div class="team"><span>${esc(x.team)} · ${t.city[x.city]}</span><span class="code">${x.code}</span></div>
+        <h3>${esc(x.product)}</h3>
+        <p class="tag">${x.tag ? esc(x.tag[lang]) : esc(t.soon)}</p>
+      </div>
+      ${x.intro ? `<p class="intro">${esc(x.intro[lang])}</p><button type="button" class="more" aria-expanded="false">${t.more}</button>` : ""}
+      ${link(x.pdp, t.pdp, "pdp")}
+      <div class="group"><h4>${t.buy}</h4>
+        ${x.buy.length ? `<div class="chips">${x.buy.map(b => link(BUY(b[2]), b[li], "chip buy")).join("")}</div>` : `<p class="empty">${t.noBuy}</p>`}
+      </div>
+      <div class="group"><h4>${t.media}</h4>
+        <div class="chips">${x.media.map(m => link(m[2], m[li], "chip")).join("")}</div>
+      </div>
+      <div class="foot">
+        ${x.survey ? link(x.survey, t.survey, "survey") : `<span class="survey chip off" aria-disabled="true">${t.noSurvey}</span>`}
+        <button type="button" class="share" data-code="${x.code}">${t.share}</button>
+      </div>
+    </div>
+  </article>`).join("");
+}
+
+document.querySelector(".lang").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  lang = b.dataset.l; try{ localStorage.setItem("echo-market-lang", lang); }catch(err){}
+  render();
+});
+document.querySelector(".filter").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return; filter = b.dataset.f; render();
+});
+const toast = msg => { const el = document.getElementById("toast"); el.textContent = msg; el.classList.add("show"); setTimeout(() => el.classList.remove("show"), 2200); };
+document.getElementById("stalls").addEventListener("click", async e => {
+  const more = e.target.closest(".more");
+  if(more){ const p = more.previousElementSibling; const open = p.classList.toggle("open");
+    more.textContent = open ? T[lang].less : T[lang].more; more.setAttribute("aria-expanded", open); return; }
+  const sh = e.target.closest(".share");
+  if(sh){
+    const url = location.href.split("#")[0].split("?")[0] + "?lang=" + lang + "#" + sh.dataset.code;
+    try{ await navigator.clipboard.writeText(url); toast(T[lang].copied); }
+    catch(err){ toast(T[lang].copyFail); }
+  }
+});
+render();
+</script>
+</body>
+</html>
